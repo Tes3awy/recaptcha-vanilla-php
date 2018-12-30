@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>reCAPTCHA Validation using Vanilla PHP</title>
     <!-- CSS styles -->
-    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- GR Script -->
     <script src='//www.google.com/recaptcha/api.js' async></script>
@@ -38,9 +38,9 @@
       }
     ?>
     <div class="container p-4">
+      <h1 class="text-white text-center mb-5">Google reCAPTCHA <span class="text-info">Server-side</span> Validation</h1>
       <div class="row">
         <div class="col-md-6 ml-auto">
-          <h1 class="text-white">Server-side Google reCAPTCHA Validation</h1>
           <?php if(isset($_POST["submit"])): ?>
           <!-- Displaying validation status -->
           <?php if(!empty($success)): ?>
