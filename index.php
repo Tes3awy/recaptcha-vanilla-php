@@ -1,5 +1,9 @@
 <!-- Requiring environment file -->
-<?php require_once('environment.php'); ?>
+<?php require_once('environment.php');
+  // Recommended to be always stored in environment variables
+  $site_key = $_ENV['SITE_KEY'];
+  $secret_key = $_ENV['SECRET_KEY'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,15 +21,12 @@
 
   <body>
     <?php
-    // Recommended to be always stored in environment variables
-      $site_key = $_ENV["SITE_KEY"];
-      $secret_key = $_ENV["SECRET_KEY"];
-
       if (isset($_POST['submit'])) {
+        // reCAPTCHA response on submitting the form
         $response = $_POST['g-recaptcha-response'];
         // remoteip param is optional
         $payload = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret_key.'&response='.$response);
-        // Decoding JSON response from Google
+        // Decoding JSON response from Google. TRUE param for assoc. array
         $res = json_decode($payload, TRUE);
         // Checking payload response
         if($res['success'] != 1) {
@@ -38,7 +39,7 @@
       }
     ?>
     <div class="container p-4">
-      <h1 class="text-white text-center mb-5">Google reCAPTCHA <span class="text-info">Server-side</span> Validation</h1>
+      <h1 class="text-white text-center mb-5">Google reCAPTCHA V2<span class="text-info">Server-Side</span> Validation</h1>
       <div class="row">
         <div class="col-md-6 ml-auto">
           <?php if(isset($_POST["submit"])): ?>
@@ -64,8 +65,7 @@
             <!-- Message Area -->
             <textarea class="form-control mb-3" name="message" rows="10" placeholder="Your message" required></textarea>
             <!-- g-recaptcha div -->
-            <div class="g-recaptcha mb-3" data-theme="dark" data-sitekey=<?php echo $site_key; ?>
-              data-callback="captchaVerified"></div>
+            <div class="g-recaptcha mb-3" data-theme="dark" data-callback="captchaVerified" data-expired-callback="captchaExpired" data-sitekey=<?php echo $site_key; ?>></div>
             <!-- Submit Btn -->
             <div class="text-center">
               <input class="btn btn-lg btn-info" id="submit" type="submit" name="submit" value="Send" disabled>
@@ -82,6 +82,10 @@
       function captchaVerified() {
         var submitBtn = document.getElementById('submit');
         submitBtn.removeAttribute('disabled');
+      }
+      // reCAPTCHA Expired callback function
+      function captchaExpired() {
+        window.location.reload();
       }
 
     </script>

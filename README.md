@@ -1,4 +1,4 @@
-# Server-side Google reCAPTCHA Validation
+# Google reCAPTCHA V2 Server-Side Validation
 
 The repo includes a complete sample code of how server-side Google reCATPCHA validation works. *(Front-end validation is also included)*
 
