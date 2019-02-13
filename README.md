@@ -6,9 +6,15 @@ In `environment.php`, you must add `sitekey` and `secretkey` provided when you c
 
 It's best to add those keys in environment variables as no one should have access to your `secretkey`.
 
-I also made tutorial about the server-side validation on ![YouTube](/images/yt.png "YouTube Logo") [![Server Side Validation](https://img.youtube.com/vi/oJzGpDbeSuA/0.jpg)](https://www.youtube.com/watch?v=oJzGpDbeSuA)
+I also made tutorial about the server-side validation on ![YouTube](/images/yt.png "YouTube Logo")
 
-You can also view the client-side tutorial on ![YouTube](/images/yt.png "YouTube Logo") [![Client Side Validation](https://img.youtube.com/vi/okaZ6OIqlzs/0.jpg)](https://www.youtube.com/watch?v=okaZ6OIqlzs)
+[![Server Side Validation](https://img.youtube.com/vi/oJzGpDbeSuA/0.jpg)](https://www.youtube.com/watch?v=oJzGpDbeSuA)
+
+----------
+
+You can also view the client-side tutorial on ![YouTube](/images/yt.png "YouTube Logo")
+
+[![Client Side Validation](https://img.youtube.com/vi/okaZ6OIqlzs/0.jpg)](https://www.youtube.com/watch?v=okaZ6OIqlzs)
 
 ----------
 
