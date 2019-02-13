@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>reCAPTCHA Validation using Vanilla PHP</title>
+    <title>reCAPTCHA Validation using Plain PHP</title>
     <!-- CSS styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -22,29 +22,29 @@
   <body>
     <?php
       if (isset($_POST['submit'])) {
-        // reCAPTCHA response on submitting the form
-        $response = $_POST['g-recaptcha-response'];
-        // remoteip param is optional
-        $payload = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret_key.'&response='.$response);
-        // Decoding JSON response from Google. TRUE param for assoc. array
-        $res = json_decode($payload, TRUE);
-        // Checking payload response
-        if($res['success'] != 1) {
-          // Failure case
-          $error = 'Sorry. Missing validation!!!';
-        } else {
-          // Success case
-          $success = 'Thank you!';
-        }
+          // reCAPTCHA response on submitting the form
+          $response = $_POST['g-recaptcha-response'];
+          // remoteip param is optional
+          $payload = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret_key.'&response='.$response);
+          // Decoding JSON response from Google. TRUE param for assoc. array
+          $res = json_decode($payload, true);
+          // Checking payload response
+          if ($res['success'] != 1) {
+              // Failure case
+              $error = 'Sorry. Missing validation!!!';
+          } else {
+              // Success case
+              $success = 'Thank you!';
+          }
       }
     ?>
     <div class="container p-4">
       <h1 class="text-white text-center mb-5">Google reCAPTCHA V2<span class="text-info">Server-Side</span> Validation</h1>
       <div class="row">
         <div class="col-md-6 ml-auto">
-          <?php if(isset($_POST["submit"])): ?>
+          <?php if (isset($_POST["submit"])): ?>
           <!-- Displaying validation status -->
-          <?php if(!empty($success)): ?>
+          <?php if (!empty($success)): ?>
           <!-- Success case -->
           <div class="alert alert-success" role="alert">
             <strong>
@@ -65,7 +65,8 @@
             <!-- Message Area -->
             <textarea class="form-control mb-3" name="message" rows="10" placeholder="Your message" required></textarea>
             <!-- g-recaptcha div -->
-            <div class="g-recaptcha mb-3" data-theme="dark" data-callback="captchaVerified" data-expired-callback="captchaExpired" data-sitekey=<?php echo $site_key; ?>></div>
+            <div class="g-recaptcha mb-3" data-theme="dark" data-callback="captchaVerified" data-expired-callback="captchaExpired"
+              data-sitekey=<?php echo $site_key; ?>></div>
             <!-- Submit Btn -->
             <div class="text-center">
               <input class="btn btn-lg btn-info" id="submit" type="submit" name="submit" value="Send" disabled>
@@ -78,7 +79,7 @@
 
     <!-- Front-end Validation -->
     <script>
-    // Verification function
+      // Verification function
       function captchaVerified() {
         var submitBtn = document.getElementById('submit');
         submitBtn.removeAttribute('disabled');
