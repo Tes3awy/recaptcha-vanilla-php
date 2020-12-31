@@ -77,7 +77,7 @@
             </div>
             <!-- Message Area -->
             <div class="form-group">
-              <textarea class="form-control" name="message" rows="10" placeholder="Message" required></textarea>
+              <textarea class="form-control" name="message" rows="8" placeholder="Message" required></textarea>
             </div>
             <!-- g-recaptcha div -->
             <div class="form-group text-center">
