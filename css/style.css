@@ -1,6 +1,6 @@
 body {
   background-image: url("../images/meerkat.jpg");
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.25);
   background-blend-mode: multiply;
   background-size: cover;
   background-position: left top;
@@ -8,12 +8,12 @@ body {
   height: 100vh;
 }
 
-input[disabled]:hover {
-  cursor: not-allowed;
+#submit {
+  cursor: pointer;
 }
 
-input {
-  cursor: pointer;
+#submit[disabled]:hover {
+  cursor: not-allowed;
 }
 
 .g-recaptcha>div {
