@@ -1,5 +1,5 @@
 body {
-  background-image: url("../images/meerkat.jpg");
+  background-image: url('../images/meerkat.jpg');
   background-color: rgba(0, 0, 0, 0.25);
   background-blend-mode: multiply;
   background-size: cover;
@@ -16,6 +16,6 @@ body {
   cursor: not-allowed;
 }
 
-.g-recaptcha>div {
+.g-recaptcha > div {
   margin: 0 auto;
 }
