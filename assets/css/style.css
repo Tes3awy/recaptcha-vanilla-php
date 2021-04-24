@@ -1,0 +1,22 @@
+body {
+  background-image: url('../images/meerkat.jpg');
+  background-color: rgba(0, 0, 0, 0.25);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: left top;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+#submit {
+  cursor: pointer;
+}
+
+#submit[disabled]:hover {
+  cursor: not-allowed;
+}
+
+/* Center reCaptcha */
+.g-recaptcha > div {
+  margin: 0 auto;
+}
