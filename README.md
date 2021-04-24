@@ -1,31 +1,35 @@
 # Google reCAPTCHA V2 Checkbox Server-Side and Client-Side Validation
 
-> The repo includes a complete sample code of how server-side Google reCATPCHA validation works. *(Client-side validation is also included)*
+> The repo includes a complete sample code of how server-side Google reCATPCHA validation works. _(Client-side validation is also included)_
 
 ## Table of Contents
+
 1. [Installation](#installation)
 2. [Data Attributes](#data-attributes)
-3. [Tutorials](#tutorials)
-    1. [Server Side Validation](#server-side-validation)
-    2. [Client Side Validation](#client-side-validation)
+3. [YouTube Tutorials](#youtube-tutorials)
+   1. [Server Side Validation](#server-side-validation)
+   2. [Client Side Validation](#client-side-validation)
 
 ---
 
 ### Installation
 
 ```bash
-git clone https://github.com/Tes3awy/recaptcha-vanilla-php.git
+$ git clone https://github.com/Tes3awy/recaptcha-vanilla-php.git
+$ cd recaptcha-vanilla-php
+$ code . # Only if you are using Visual Studio Code
 ```
 
 First, you **must** add `sitekey` and `secretkey` in `environment.php`. Those keys are provided when you [create](https://www.google.com/recaptcha/admin/create) a reCAPTCHA V2 Checkbox.
 
 > It's a best practice approach to add those keys in environment variables as no one should have access to your `secretkey`.
 
-
 ### Data Attributes
-```
+
+```php
 data-sitekey="<SITE_KEY>" (Required)
-data-theme="<DARK_OR_LIGHT>" (Optional)
+data-theme="<THEME>" (Optional. Allowed values: "dark" or "light". Default: light)
+data-size="<SIZE>" (Optional. Allowed values: "normal" or "compact". Default: normal)
 data-callback="<CALLBACK_FUNCTION>" (Optional)
 data-expired-callback="<EXPIRY_CALLBACK_FUNCTION>" (Optional)
 ```
@@ -34,22 +38,22 @@ data-expired-callback="<EXPIRY_CALLBACK_FUNCTION>" (Optional)
 
 ---
 
-### Tutorials
+### YouTube Tutorials
 
 #### Server Side Validation
 
-I made a tutorial about the server-side validation on ![YouTube](/images/YouTube.png "YouTube Logo"). Grab your cup of tea or coffee and enjoy it.
+I made a tutorial about the server-side validation on ![YouTube](assets/images/YouTube.png 'YouTube Logo'). Grab your cup of tea or coffee and enjoy it.
 
-[![Server Side Validation](https://img.youtube.com/vi/oJzGpDbeSuA/0.jpg)](https://www.youtube.com/watch?v=oJzGpDbeSuA)
+[![Server Side Validation](https://img.youtube.com/vi/oJzGpDbeSuA/0.jpg)](https://youtube.com/watch?v=oJzGpDbeSuA)
 
 ---
 
 #### Client Side Validation
 
-You can also view the client-side tutorial on ![YouTube](/images/YouTube.png "YouTube Logo")
+You can also view the client-side validation tutorial on ![YouTube](assets/images/YouTube.png 'YouTube Logo')
 
-[![Client Side Validation](https://img.youtube.com/vi/okaZ6OIqlzs/0.jpg)](https://www.youtube.com/watch?v=okaZ6OIqlzs)
+[![Client Side Validation](https://img.youtube.com/vi/okaZ6OIqlzs/0.jpg)](https://youtube.com/watch?v=okaZ6OIqlzs)
 
 ---
 
-For reference, visit [Google reCAPTCHA Official Website](https://developers.google.com/recaptcha/).
+For reference, please visit [Google reCAPTCHA Developers Guide](https://developers.google.com/recaptcha/docs/verify).
