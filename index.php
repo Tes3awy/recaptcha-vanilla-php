@@ -9,18 +9,18 @@
 
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <title>Google reCAPTCHA Server-side Validation using Plain PHP</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <title>Google reCAPTCHA Server-Side Validation using Plain PHP</title>
     <!-- CSS styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <!-- FontAwesome 4 -->
     <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!-- GR Script -->
-    <script src='//www.google.com/recaptcha/api.js' async></script>
+    <script src='//www.google.com/recaptcha/api.js' async defer></script>
   </head>
 
   <body>
@@ -36,8 +36,7 @@
           // Checking payload response
           if ($res['success'] != 1):
             // Failure case
-            $error = '✖ Oops! Missing reCAPTCHA validation.';
-          else:
+            $error = '✖ Oops! Missing reCAPTCHA validation.'; else:
             // Success case
             $success = '✔ Your message was sent successfully. Thank you!';
           endif;
@@ -49,20 +48,20 @@
       <div class="row">
         <div class="col-md-6 col-12 ml-md-auto">
           <?php if (isset($_POST["submit"])): ?>
-            <!-- Displaying validation status -->
-            <?php if (!empty($success)): ?>
-            <!-- Success case -->
-            <div class="alert alert-success" role="alert">
-              <strong>
-                <?php echo $success; ?></strong>
-            </div>
-            <?php else: ?>
-            <!-- Failure case -->
-            <div class="alert alert-danger" role="alert">
-              <strong>
-                <?php echo $error; ?></strong>
-            </div>
-            <?php endif; ?>
+          <!-- Displaying validation status -->
+          <?php if (!empty($success)): ?>
+          <!-- Success case -->
+          <div class="alert alert-success" role="alert">
+            <strong>
+              <?php echo $success; ?></strong>
+          </div>
+          <?php else: ?>
+          <!-- Failure case -->
+          <div class="alert alert-danger" role="alert">
+            <strong>
+              <?php echo $error; ?></strong>
+          </div>
+          <?php endif; ?>
           <?php endif; ?>
           <!-- Form -->
           <form method="POST" role="form">
@@ -88,7 +87,7 @@
             </div>
             <!-- g-recaptcha div -->
             <div class="form-group text-center">
-              <div class="g-recaptcha" data-theme="light" data-callback="captchaVerified"
+              <div class="g-recaptcha" data-theme="light" data-size="normal" data-callback="captchaVerified"
                 data-expired-callback="captchaExpired" data-sitekey=<?php echo $site_key; ?>></div>
             </div>
             <!-- Submit Btn -->
@@ -102,9 +101,9 @@
       </div>
     </div>
 
-    <!-- Front-end Validation -->
+    <!-- Front-End Validation Callback Functions -->
     <script>
-      // Verification function
+      // Verification callback function
       function captchaVerified() {
         var submitBtn = document.getElementById('submit');
         submitBtn.removeAttribute('disabled');
