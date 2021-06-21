@@ -46,7 +46,7 @@
       <h1 class="text-white text-center mb-5">Google reCAPTCHA V2 <span class="text-info">Server-Side</span> Validation
       </h1>
       <div class="row">
-        <div class="col-md-6 col-12 ml-md-auto">
+        <div class="col-md-6 col-12 ms-md-auto">
           <?php if (isset($_POST["submit"])): ?>
           <!-- Displaying validation status -->
           <?php if (!empty($success)): ?>
@@ -67,22 +67,22 @@
           <form method="POST" role="form">
             <!-- Name Field -->
             <div class="form-group">
-              <input class="form-control border-0 shadow-sm" type="text" name="name" placeholder="Full name"
+              <input class="form-control border-0 shadow-sm mb-2" type="text" name="name" placeholder="Full name"
                 autocomplete="true" required>
             </div>
             <!-- Email Address -->
             <div class="form-group">
-              <input class="form-control border-0 shadow-sm" type="email" name="email" placeholder="Email address"
+              <input class="form-control border-0 shadow-sm mb-2" type="email" name="email" placeholder="Email address"
                 autocomplete="true" required>
             </div>
             <!-- Mobile Phone -->
             <div class="form-group">
-              <input class="form-control border-0 shadow-sm" type="tel" name="phone" placeholder="Mobile phone"
+              <input class="form-control border-0 shadow-sm mb-2" type="tel" name="phone" placeholder="Mobile phone"
                 autocomplete="true" required>
             </div>
             <!-- Message Area -->
             <div class="form-group">
-              <textarea class="form-control border-0 shadow-sm" name="message" rows="8" placeholder="Message"
+              <textarea class="form-control border-0 shadow-sm mb-2" name="message" rows="8" placeholder="Message"
                 required></textarea>
             </div>
             <!-- g-recaptcha div -->
@@ -91,7 +91,7 @@
                 data-expired-callback="captchaExpired" data-sitekey=<?php echo $site_key; ?>></div>
             </div>
             <!-- Submit Btn -->
-            <div class="text-center">
+            <div class="text-center mt-3">
               <button class="btn btn-lg btn-outline-info shadow-sm" id="submit" type="submit" name="submit" disabled
                 aria-disabled="true"><i class="fa fa-paper-plane"></i> &nbsp; Send</button>
             </div>
@@ -108,8 +108,10 @@
         var submitBtn = document.getElementById('submit');
         submitBtn.removeAttribute('disabled');
         submitBtn.removeAttribute('aria-disabled');
+        submitBtn.classList.remove('btn-outline-info');
+        submitBtn.classList.add('btn-info');
       }
-      // reCAPTCHA Expired callback function
+      // Expiration callback function
       function captchaExpired() {
         grecaptcha.reset();
       }

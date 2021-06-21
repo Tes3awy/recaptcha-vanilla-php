@@ -8,12 +8,13 @@ body {
   height: 100vh;
 }
 
-#submit {
-  cursor: pointer;
+#submit:disabled:hover {
+  cursor: not-allowed;
+  pointer-events: all !important;
 }
 
-#submit[disabled]:hover {
-  cursor: not-allowed;
+#submit {
+  cursor: pointer;
 }
 
 /* Center reCaptcha */
