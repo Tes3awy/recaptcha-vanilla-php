@@ -41,7 +41,7 @@ data-callback="<CALLBACK_FUNCTION>" (Optional)
 data-expired-callback="<EXPIRY_CALLBACK_FUNCTION>" (Optional)
 ```
 
-> I used [Bootstrap v5.1.0](https://getbootstrap.com/docs/5.1/getting-started/introduction/) as the front-end library. And the `bootstrap.min.css` was downloaded from [Bootswatch (Cosmos Theme)](https://bootswatch.com/cosmos/)
+> I used [Bootstrap v5.1.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/) as the front-end library. And the `bootstrap.min.css` was downloaded from [Bootswatch (Cosmos Theme)](https://bootswatch.com/cosmos/)
 
 ---
 
