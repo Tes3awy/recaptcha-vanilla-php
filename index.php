@@ -92,7 +92,7 @@
             </div>
             <!-- Submit Btn -->
             <div class="text-center mt-3">
-              <button class="btn btn-lg btn-outline-info shadow-sm" id="submit" type="submit" name="submit" disabled
+              <button class="btn btn-lg btn-outline-info shadow-sm disabled" id="submit" type="submit" name="submit" disabled
                 aria-disabled="true"><i class="fa fa-paper-plane"></i> &nbsp; Send</button>
             </div>
           </form>
@@ -108,7 +108,7 @@
         var submitBtn = document.getElementById('submit');
         submitBtn.removeAttribute('disabled');
         submitBtn.removeAttribute('aria-disabled');
-        submitBtn.classList.remove('btn-outline-info');
+        submitBtn.classList.remove('btn-outline-info', 'disabled');
         submitBtn.classList.add('btn-info');
       }
       // Expiration callback function
