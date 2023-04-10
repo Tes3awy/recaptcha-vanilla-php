@@ -8,6 +8,8 @@
 
 # Google reCAPTCHA V2 Checkbox Server-Side and Client-Side Validation
 
+![GIF](assets/images/screen.gif "GIF")
+
 > The repo includes a complete sample code of how server-side &amp; client-side Google reCATPCHA V2 validations work.
 
 ## Table of Contents
