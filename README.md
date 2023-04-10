@@ -5,6 +5,7 @@
 ![Issues](https://img.shields.io/github/issues/Tes3awy/recaptcha-vanilla-php?style=flat-square)
 [![Pre-Commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white&style=flat-square)](https://github.com/pre-commit/pre-commit)
 [![License](https://img.shields.io/github/license/Tes3awy/recaptcha-vanilla-php?color=purple&style=flat-square)](https://github.com/Tes3awy/recaptcha-vanilla-php/blob/master/LICENSE)
+
 # Google reCAPTCHA V2 Checkbox Server-Side and Client-Side Validation
 
 > The repo includes a complete sample code of how server-side &amp; client-side Google reCATPCHA V2 validations work.
@@ -27,7 +28,7 @@ $ cd recaptcha-vanilla-php
 $ code . # Only if you are using VSCode
 ```
 
-To begin with, you **MUST** provide `sitekey` and `secretkey` in `environment.php`. These keys are provided when you [create](https://www.google.com/recaptcha/admin/create) a reCAPTCHA V2 Checkbox.
+To begin with, you **MUST** provide both `sitekey` and `secretkey` in `environment.php` file. These keys are provided when you [create a reCAPTCHA V2 Checkbox](https://www.google.com/recaptcha/admin/create).
 
 > It's a best practice approach to add those keys in environment variables as no one should have access to your `secretkey`.
 
@@ -35,13 +36,14 @@ To begin with, you **MUST** provide `sitekey` and `secretkey` in `environment.ph
 
 ```php
 data-sitekey="<SITE_KEY>" (Required)
-data-theme="<THEME>" (Optional. Allowed values: "dark" or "light". Default: light)
-data-size="<SIZE>" (Optional. Allowed values: "normal" or "compact". Default: normal)
+data-theme="<THEME>" (Optional. Allowed values: "light" or "dark". Default: `light`)
+data-size="<SIZE>" (Optional. Allowed values: "normal" or "compact". Default: `normal`)
 data-callback="<CALLBACK_FUNCTION>" (Optional)
 data-expired-callback="<EXPIRY_CALLBACK_FUNCTION>" (Optional)
+data-error-callback="<ERROR_CALLBACK_FUNCTION>" (Optional)
 ```
 
-> I used [Bootstrap v5.1.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/) as the front-end library. And the `bootstrap.min.css` was downloaded from [Bootswatch (Cosmos Theme)](https://bootswatch.com/cosmos/)
+> I used [Bootstrap v5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/) as the front-end library. And the `bootstrap.min.css` was downloaded from [Bootswatch (Zephyr Theme)](https://bootswatch.com/zephyr/)
 
 ---
 
@@ -49,7 +51,7 @@ data-expired-callback="<EXPIRY_CALLBACK_FUNCTION>" (Optional)
 
 #### Server Side Validation
 
-I made a tutorial about the server-side validation on ![YouTube](assets/images/YouTube.png 'YouTube Logo'). Grab your cup of coffee and enjoy watching!
+I made a tutorial about the server-side validation on ![YouTube](assets/images/YouTube.png "YouTube Logo"). Grab your cup of coffee and enjoy :wink:
 
 [![Server Side Validation](https://img.youtube.com/vi/oJzGpDbeSuA/0.jpg)](https://youtube.com/watch?v=oJzGpDbeSuA)
 
@@ -57,7 +59,7 @@ I made a tutorial about the server-side validation on ![YouTube](assets/images/Y
 
 #### Client Side Validation
 
-You can also watch the client-side validation tutorial on ![YouTube](assets/images/YouTube.png 'YouTube Logo')
+You can also watch the client-side validation tutorial on ![YouTube](assets/images/YouTube.png "YouTube Logo")
 
 [![Client Side Validation](https://img.youtube.com/vi/okaZ6OIqlzs/0.jpg)](https://youtube.com/watch?v=okaZ6OIqlzs)
 
