@@ -43,7 +43,7 @@ data-expired-callback="<EXPIRY_CALLBACK_FUNCTION>" (Optional)
 data-error-callback="<ERROR_CALLBACK_FUNCTION>" (Optional)
 ```
 
-> I used [Bootstrap v5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/) as the front-end library. And the `bootstrap.min.css` was downloaded from [Bootswatch (Zephyr Theme)](https://bootswatch.com/zephyr/)
+> I used [Bootstrap v5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/) as the front-end library. And the `zephyr.min.css` was downloaded from [Bootswatch (Zephyr Theme)](https://bootswatch.com/zephyr/)
 
 ---
 
