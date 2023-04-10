@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     <title>Google reCAPTCHA Server-Side Validation using Plain PHP</title>
     <!-- CSS styles -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/zephyr.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- FontAwesome 4 -->
     <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -34,7 +34,7 @@
           // Decoding JSON response from Google. TRUE param for assoc. array
           $res = json_decode($payload, true);
           // Checking payload response
-          if ($res['success'] != 1):
+          if (!$res['success']):
             // Failure case
             $error = '✖ Oops! Missing reCAPTCHA validation.'; else:
             // Success case
@@ -64,7 +64,7 @@
           <?php endif; ?>
           <?php endif; ?>
           <!-- Form -->
-          <form method="POST" role="form">
+          <form method="POST" role="form" novalidate>
             <!-- Name Field -->
             <div class="form-group">
               <input class="form-control border-0 shadow-sm mb-2" type="text" name="name" placeholder="Full name"
@@ -88,7 +88,7 @@
             <!-- g-recaptcha div -->
             <div class="form-group text-center">
               <div class="g-recaptcha" data-theme="light" data-size="normal" data-callback="captchaVerified"
-                data-expired-callback="captchaExpired" data-sitekey=<?php echo $site_key; ?>></div>
+                data-expired-callback="captchaExpired" data-error-callback="captchaFailed" data-sitekey=<?php echo $site_key; ?>></div>
             </div>
             <!-- Submit Btn -->
             <div class="text-center mt-3">
@@ -114,6 +114,10 @@
       // Expiration callback function
       function captchaExpired() {
         grecaptcha.reset();
+      }
+      // Error Callback function
+      function captchaFailed() {
+        alert('Failed to verify reCAPTCHA! There might be a connection issue. Please refresh the page and retry');
       }
     </script>
   </body>
